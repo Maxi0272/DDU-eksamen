@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://ce6m8secxwxlj"]
+
+[ext_resource type="Shader" path="res://main.gdshader" id="1_j7sod"]
+[ext_resource type="Script" path="res://main.gd" id="1_uis4v"]
+[ext_resource type="Script" path="res://Box_list_container.gd" id="3_6u030"]
+[ext_resource type="Script" path="res://Camera_point.gd" id="4_6qh1k"]
+[ext_resource type="PackedScene" uid="uid://cq6ckwwmv3k7g" path="res://new_box.tscn" id="5_i3mma"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c4s5m"]
+render_priority = 0
+shader = ExtResource("1_j7sod")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/wire_color = Color(0, 0, 0, 1)
+shader_parameter/wire_width = 5.0
+shader_parameter/wire_smoothness = 0.01
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_uis4v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.377275, 0.926101, 0, -0.926101, -0.377275, 0, 0, 0, 1, 50, 200, 50)
+
+[node name="Outerbox" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 50, 50)
+material_override = SubResource("ShaderMaterial_c4s5m")
+size = Vector3(100, 100, 100)
+
+[node name="Panning" type="Label3D" parent="Outerbox"]
+transform = Transform3D(-3.0421e-08, -0.71809, 0.69595, -3.13887e-08, 0.69595, 0.71809, -1, 0, -4.37114e-08, 59.087, -44.599, 0)
+pixel_size = 0.5
+text = "PANNING"
+
+[node name="Depth" type="Label3D" parent="Outerbox"]
+transform = Transform3D(1, 0, 0, 0, 0.525026, 0.851086, 0, -0.851086, 0.525026, 0, -50, 58.1608)
+pixel_size = 0.5
+text = "DEPTH"
+
+[node name="freq" type="Label3D" parent="Outerbox"]
+transform = Transform3D(-4.01998e-08, -0.919664, 0.392706, 1, -4.37114e-08, 0, 1.71657e-08, 0.392706, 0.919664, 57.2522, 0, -50)
+pixel_size = 0.5
+text = "FREQ."
+
+[node name="Camera_rotation" type="Node3D" parent="."]
+
+[node name="Canvas_layer" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="Canvas_layer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 603.0
+offset_bottom = 326.0
+
+[node name="Box_list_container" type="VBoxContainer" parent="Canvas_layer/HUD"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 84.0
+offset_right = 233.0
+offset_bottom = 253.0
+script = ExtResource("3_6u030")
+
+[node name="Layers_text" type="RichTextLabel" parent="Canvas_layer/HUD"]
+layout_mode = 2
+offset_left = 100.0
+offset_top = 61.0
+offset_right = 176.0
+offset_bottom = 83.0
+size_flags_vertical = 3
+text = " Layers"
+scroll_active = false
+
+[node name="add_new" type="Button" parent="Canvas_layer/HUD"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 16.0
+offset_right = 175.0
+offset_bottom = 47.0
+text = "+ Add new"
+
+[node name="New_box" parent="Canvas_layer/HUD" instance=ExtResource("5_i3mma")]
+visible = false
+layout_mode = 1
+offset_left = 11.0
+offset_top = 291.0
+offset_right = -592.0
+offset_bottom = -35.0
+
+[node name="Camera_point" type="Node3D" parent="."]
+script = ExtResource("4_6qh1k")
+
+[node name="Camera3D" type="Camera3D" parent="Camera_point"]
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 153, 120, 150)
+fov = 60.0
+
+[connection signal="pressed" from="Canvas_layer/HUD/add_new" to="." method="_on_add_new_pressed"]
+[connection signal="buttonpress" from="Canvas_layer/HUD/New_box" to="." method="_on_new_box_buttonpress"]
+[connection signal="buttonpress" from="Canvas_layer/HUD/New_box" to="Canvas_layer/HUD/Box_list_container" method="_on_new_box_buttonpress"]

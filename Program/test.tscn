@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://chav0qqsrke6s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cro0k"]
+albedo_color = Color(0.905882, 0.92549, 0, 1)
+
+[node name="TEST" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material_override = SubResource("StandardMaterial3D_cro0k")
+operation = 1
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 2.20521, 0.352962, 2)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.538573, 0, 0)

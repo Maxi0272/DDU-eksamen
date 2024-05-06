@@ -1,0 +1,320 @@
+[gd_scene load_steps=8 format=3 uid="uid://cq6ckwwmv3k7g"]
+
+[ext_resource type="Script" path="res://new_box.gd" id="1_80nn8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nrpef"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vw8qs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3nlck"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_np4pk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mmndr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnlyr"]
+
+[node name="New_box" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -862.0
+offset_bottom = -363.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_80nn8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 420.0
+offset_bottom = 353.0
+color = Color(0.211765, 0.211765, 0.211765, 1)
+
+[node name="add_new_text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 164.0
+offset_top = -1.0
+offset_right = 246.0
+offset_bottom = 39.0
+text = "ADD NEW"
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 38.0
+offset_right = 405.0
+offset_bottom = 345.0
+
+[node name="Name_field" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Name_text" type="RichTextLabel" parent="VBoxContainer/Name_field"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name
+"
+scroll_active = false
+
+[node name="Name_edit" type="TextEdit" parent="VBoxContainer/Name_field"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+placeholder_text = "Text"
+
+[node name="Color_field" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Color_text" type="RichTextLabel" parent="VBoxContainer/Color_field"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Color
+"
+scroll_active = false
+
+[node name="Color_button" type="ColorPickerButton" parent="VBoxContainer/Color_field"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Freq_field_low" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="freq_text_low" type="RichTextLabel" parent="VBoxContainer/Freq_field_low"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Frequency range
+"
+scroll_active = false
+
+[node name="freq_slider_range" type="HSlider" parent="VBoxContainer/Freq_field_low"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_nrpef")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_vw8qs")
+value = 50.0
+rounded = true
+
+[node name="LOW" type="RichTextLabel" parent="VBoxContainer/Freq_field_low/freq_slider_range"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 12.0
+offset_right = 43.0
+offset_bottom = 32.0
+theme_override_font_sizes/normal_font_size = 10
+text = "SMALL"
+
+[node name="HIGH" type="RichTextLabel" parent="VBoxContainer/Freq_field_low/freq_slider_range"]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 13.0
+offset_right = 262.0
+offset_bottom = 30.0
+theme_override_font_sizes/normal_font_size = 10
+text = "LARGE"
+
+[node name="Freq_field_pos" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="freq_text_high" type="RichTextLabel" parent="VBoxContainer/Freq_field_pos"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Frequency pos."
+scroll_active = false
+
+[node name="freq_slider_pos" type="HSlider" parent="VBoxContainer/Freq_field_pos"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_nrpef")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_vw8qs")
+value = 50.0
+rounded = true
+
+[node name="LOW" type="RichTextLabel" parent="VBoxContainer/Freq_field_pos/freq_slider_pos"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 12.0
+offset_right = 33.0
+offset_bottom = 32.0
+theme_override_font_sizes/normal_font_size = 10
+text = "LOW"
+
+[node name="HIGH" type="RichTextLabel" parent="VBoxContainer/Freq_field_pos/freq_slider_pos"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 13.0
+offset_right = 263.0
+offset_bottom = 30.0
+theme_override_font_sizes/normal_font_size = 10
+text = "HIGH"
+
+[node name="pan_field_size" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="pan_text" type="RichTextLabel" parent="VBoxContainer/pan_field_size"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Panning range"
+scroll_active = false
+
+[node name="pan_slider_size" type="HSlider" parent="VBoxContainer/pan_field_size"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_3nlck")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_np4pk")
+min_value = 1.0
+max_value = 99.0
+value = 50.0
+
+[node name="LEFT" type="RichTextLabel" parent="VBoxContainer/pan_field_size/pan_slider_size"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 11.0
+offset_right = 54.0
+offset_bottom = 31.0
+theme_override_font_sizes/normal_font_size = 10
+text = "SMALL"
+
+[node name="RIGHT" type="RichTextLabel" parent="VBoxContainer/pan_field_size/pan_slider_size"]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 13.0
+offset_right = 272.0
+offset_bottom = 33.0
+theme_override_font_sizes/normal_font_size = 10
+text = "LARGE"
+
+[node name="pan_field_pos" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="pan_text" type="RichTextLabel" parent="VBoxContainer/pan_field_pos"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Panning pos."
+scroll_active = false
+
+[node name="pan_slider_pos" type="HSlider" parent="VBoxContainer/pan_field_pos"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_3nlck")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_np4pk")
+min_value = 1.0
+max_value = 99.0
+value = 50.0
+
+[node name="LEFT" type="RichTextLabel" parent="VBoxContainer/pan_field_pos/pan_slider_pos"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 11.0
+offset_right = 33.0
+offset_bottom = 31.0
+theme_override_font_sizes/normal_font_size = 10
+text = "LEFT"
+
+[node name="RIGHT" type="RichTextLabel" parent="VBoxContainer/pan_field_pos/pan_slider_pos"]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 13.0
+offset_right = 260.0
+offset_bottom = 33.0
+theme_override_font_sizes/normal_font_size = 10
+text = "RIGHT"
+
+[node name="depth_field_dry" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="depth_text_low" type="RichTextLabel" parent="VBoxContainer/depth_field_dry"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Depth range"
+scroll_active = false
+
+[node name="depth_slider_low" type="HSlider" parent="VBoxContainer/depth_field_dry"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_mmndr")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_vnlyr")
+value = 50.0
+
+[node name="DRY" type="RichTextLabel" parent="VBoxContainer/depth_field_dry/depth_slider_low"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 14.0
+offset_right = 43.0
+offset_bottom = 34.0
+theme_override_font_sizes/normal_font_size = 10
+text = "SMALL"
+
+[node name="WET" type="RichTextLabel" parent="VBoxContainer/depth_field_dry/depth_slider_low"]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 13.0
+offset_right = 270.0
+offset_bottom = 33.0
+theme_override_font_sizes/normal_font_size = 10
+text = "LARGE"
+
+[node name="depth_field_wet" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="depth_text_high" type="RichTextLabel" parent="VBoxContainer/depth_field_wet"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Depth pos."
+scroll_active = false
+
+[node name="depth_slider_high" type="HSlider" parent="VBoxContainer/depth_field_wet"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_mmndr")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_vnlyr")
+value = 50.0
+
+[node name="DRY" type="RichTextLabel" parent="VBoxContainer/depth_field_wet/depth_slider_high"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 14.0
+offset_right = 33.0
+offset_bottom = 34.0
+theme_override_font_sizes/normal_font_size = 10
+text = "DRY"
+
+[node name="WET" type="RichTextLabel" parent="VBoxContainer/depth_field_wet/depth_slider_high"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 13.0
+offset_right = 265.0
+offset_bottom = 33.0
+theme_override_font_sizes/normal_font_size = 10
+text = "WET"
+
+[node name="Add_but" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "ADD"
+
+[connection signal="text_changed" from="VBoxContainer/Name_field/Name_edit" to="." method="_on_name_edit_text_changed"]
+[connection signal="color_changed" from="VBoxContainer/Color_field/Color_button" to="." method="_on_color_button_color_changed"]
+[connection signal="value_changed" from="VBoxContainer/Freq_field_low/freq_slider_range" to="." method="_on_freq_slider_low_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Freq_field_low/freq_slider_range" to="VBoxContainer/Freq_field_pos/freq_slider_pos" method="_on_freq_slider_range_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Freq_field_pos/freq_slider_pos" to="." method="_on_freq_slider_high_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/pan_field_size/pan_slider_size" to="." method="_on_pan_slider_size_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/pan_field_pos/pan_slider_pos" to="." method="_on_pan_slider_left_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/depth_field_dry/depth_slider_low" to="." method="_on_depth_slider_low_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/depth_field_wet/depth_slider_high" to="." method="_on_depth_slider_high_value_changed"]
+[connection signal="pressed" from="VBoxContainer/Add_but" to="." method="_on_add_but_pressed"]

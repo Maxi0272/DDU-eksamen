@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck1tjgttodpxv"]
+
+[ext_resource type="Script" path="res://Inner_box_template.gd" id="1_nlu2x"]
+
+[node name="Hbox" type="HBoxContainer"]
+offset_right = 215.0
+offset_bottom = 66.0
+size_flags_vertical = 3
+script = ExtResource("1_nlu2x")
+
+[node name="Color_rect_vbox" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Color_rect_vbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "TROMBONE"
+text_overrun_behavior = 3
+
+[node name="ColorRect" type="ColorRect" parent="Color_rect_vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button_vbox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="delete" type="Button" parent="Button_vbox"]
+layout_mode = 2
+text = "DELETE"
+
+[node name="edit" type="Button" parent="Button_vbox"]
+layout_mode = 2
+text = "EDIT"
+
+[connection signal="pressed" from="Button_vbox/delete" to="." method="_on_delete_pressed"]

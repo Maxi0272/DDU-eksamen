@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://ce6m8secxwxlj"]
+
+[ext_resource type="Shader" path="res://main.gdshader" id="1_j7sod"]
+[ext_resource type="Script" path="res://main.gd" id="1_uis4v"]
+[ext_resource type="Script" path="res://add_new.gd" id="3_5t42o"]
+[ext_resource type="Script" path="res://Camera_point.gd" id="4_6qh1k"]
+[ext_resource type="PackedScene" uid="uid://cq6ckwwmv3k7g" path="res://new_box.tscn" id="5_i3mma"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c4s5m"]
+render_priority = 0
+shader = ExtResource("1_j7sod")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/wire_color = Color(0, 0, 0, 1)
+shader_parameter/wire_width = 5.0
+shader_parameter/wire_smoothness = 0.01
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_uis4v")
+
+[node name="Outerbox" type="CSGBox3D" parent="."]
+material_override = SubResource("ShaderMaterial_c4s5m")
+size = Vector3(10, 10, 10)
+
+[node name="Camera_rotation" type="Node3D" parent="."]
+
+[node name="Canvas_layer" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="Canvas_layer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 603.0
+offset_bottom = 326.0
+
+[node name="Layers_text" type="RichTextLabel" parent="Canvas_layer/HUD"]
+layout_mode = 2
+offset_top = 60.0
+offset_right = 275.0
+offset_bottom = 258.0
+size_flags_vertical = 3
+text = "						  Layers"
+scroll_active = false
+
+[node name="add_new" type="Button" parent="Canvas_layer/HUD"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 16.0
+offset_right = 175.0
+offset_bottom = 47.0
+text = "+ Add new"
+script = ExtResource("3_5t42o")
+
+[node name="Camera_point" type="Node3D" parent="."]
+script = ExtResource("4_6qh1k")
+
+[node name="Camera3D" type="Camera3D" parent="Camera_point"]
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 10, 6.995, 10)
+fov = 59.7916
+
+[node name="New_box" parent="." instance=ExtResource("5_i3mma")]
+offset_left = 467.0
+offset_top = 61.0
+offset_right = -288.0
+offset_bottom = -231.0
+
+[connection signal="pressed" from="Canvas_layer/HUD/add_new" to="." method="_on_add_new_pressed"]
+[connection signal="buttonpress" from="New_box" to="." method="_on_new_box_buttonpress"]
