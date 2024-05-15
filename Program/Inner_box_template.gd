@@ -9,7 +9,7 @@ func _ready():
 	size_flags_vertical = SIZE_EXPAND
 # 	Tænder for "Expand" på Hbox fordi dette ikke kan gøres i scenen da den ikke er barn af en control node
 
-func _process(delta):
+func _process(_delta):
 	label.text = Manager.test[box_id]["name"]
 	color_rect.color = Manager.test[box_id]["color"]
 

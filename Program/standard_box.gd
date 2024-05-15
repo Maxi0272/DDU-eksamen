@@ -8,8 +8,8 @@ extends Node3D
 @onready var top = $inner_box/Top
 
 
-var max = 0
-var min = 0
+var max_box = 0
+var min_box = 0
 
 
 func _ready():
@@ -20,17 +20,17 @@ func _ready():
 
 
 func clamping():
-	max = 100 - inner_box.size.y / 2
-	min = 0 + inner_box.size.y / 2
-	inner_box.position.y = clamp(inner_box.position.y,min,max)
+	max_box = 100 - inner_box.size.y / 2
+	min_box = 0 + inner_box.size.y / 2
+	inner_box.position.y = clamp(inner_box.position.y,min_box,max_box)
 	
-	max = 100 - inner_box.size.x / 2
-	min = 0 + inner_box.size.x / 2
-	inner_box.position.x = clamp(inner_box.position.x,min,max)
+	max_box = 100 - inner_box.size.x / 2
+	min_box = 0 + inner_box.size.x / 2
+	inner_box.position.x = clamp(inner_box.position.x,min_box,max_box)
 	
-	max = 100 - inner_box.size.z / 2
-	min = 0 + inner_box.size.z / 2
-	inner_box.position.z = clamp(inner_box.position.z,min,max)
+	max_box = 100 - inner_box.size.z / 2
+	min_box = 0 + inner_box.size.z / 2
+	inner_box.position.z = clamp(inner_box.position.z,min_box,max_box)
 
 
 
