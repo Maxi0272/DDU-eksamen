@@ -92,26 +92,12 @@ theme_override_font_sizes/font_size = 13
 toggle_mode = true
 text = "Rotate"
 
-[node name="Down" type="Button" parent="Canvas_layer/HUD"]
-layout_mode = 0
-offset_left = 1040.0
-offset_top = 85.0
-offset_right = 1094.0
-offset_bottom = 115.0
-
 [node name="Left" type="Button" parent="Canvas_layer/HUD"]
 layout_mode = 0
 offset_left = 982.0
 offset_top = 51.0
 offset_right = 1036.0
 offset_bottom = 81.0
-
-[node name="Up" type="Button" parent="Canvas_layer/HUD"]
-layout_mode = 0
-offset_left = 1040.0
-offset_top = 18.0
-offset_right = 1094.0
-offset_bottom = 48.0
 
 [node name="Right" type="Button" parent="Canvas_layer/HUD"]
 layout_mode = 0
