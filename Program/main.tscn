@@ -17,9 +17,6 @@ shader_parameter/wire_smoothness = 0.01
 [node name="Main" type="Node3D"]
 script = ExtResource("1_uis4v")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.377275, 0.926101, 0, -0.926101, -0.377275, 0, 0, 0, 1, 50, 200, 50)
-
 [node name="Outerbox" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 50, 50)
 material_override = SubResource("ShaderMaterial_c4s5m")
@@ -105,6 +102,14 @@ offset_left = 1096.0
 offset_top = 51.0
 offset_right = 1150.0
 offset_bottom = 81.0
+
+[node name="Label" type="Label" parent="Canvas_layer/HUD"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 235.0
+offset_right = 155.0
+offset_bottom = 261.0
+text = "testtt"
 
 [node name="Camera_point" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 50, 50)
