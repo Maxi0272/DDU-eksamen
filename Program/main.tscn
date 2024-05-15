@@ -40,15 +40,13 @@ transform = Transform3D(-4.01998e-08, -0.919664, 0.392706, 1, -4.37114e-08, 0, 1
 pixel_size = 0.5
 text = "FREQ."
 
-[node name="Camera_rotation" type="Node3D" parent="."]
-
 [node name="Canvas_layer" type="CanvasLayer" parent="."]
 
 [node name="HUD" type="Control" parent="Canvas_layer"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 603.0
-offset_bottom = 326.0
+offset_right = 1154.0
+offset_bottom = 428.0
 
 [node name="Box_list_container" type="VBoxContainer" parent="Canvas_layer/HUD"]
 layout_mode = 0
@@ -84,13 +82,56 @@ offset_top = 291.0
 offset_right = -592.0
 offset_bottom = -35.0
 
+[node name="Middle" type="Button" parent="Canvas_layer/HUD"]
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 51.0
+offset_right = 1094.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 13
+toggle_mode = true
+text = "Rotate"
+
+[node name="Down" type="Button" parent="Canvas_layer/HUD"]
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 85.0
+offset_right = 1094.0
+offset_bottom = 115.0
+
+[node name="Left" type="Button" parent="Canvas_layer/HUD"]
+layout_mode = 0
+offset_left = 982.0
+offset_top = 51.0
+offset_right = 1036.0
+offset_bottom = 81.0
+
+[node name="Up" type="Button" parent="Canvas_layer/HUD"]
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 18.0
+offset_right = 1094.0
+offset_bottom = 48.0
+
+[node name="Right" type="Button" parent="Canvas_layer/HUD"]
+layout_mode = 0
+offset_left = 1096.0
+offset_top = 51.0
+offset_right = 1150.0
+offset_bottom = 81.0
+
 [node name="Camera_point" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 50, 50)
 script = ExtResource("4_6qh1k")
 
 [node name="Camera3D" type="Camera3D" parent="Camera_point"]
-transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 153, 120, 150)
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 103, 70, 100)
 fov = 60.0
 
 [connection signal="pressed" from="Canvas_layer/HUD/add_new" to="." method="_on_add_new_pressed"]
-[connection signal="buttonpress" from="Canvas_layer/HUD/New_box" to="." method="_on_new_box_buttonpress"]
 [connection signal="buttonpress" from="Canvas_layer/HUD/New_box" to="Canvas_layer/HUD/Box_list_container" method="_on_new_box_buttonpress"]
+[connection signal="pressed" from="Canvas_layer/HUD/Middle" to="Camera_point" method="_on_middle_pressed"]
+[connection signal="button_down" from="Canvas_layer/HUD/Left" to="Camera_point" method="_on_left_button_down"]
+[connection signal="button_up" from="Canvas_layer/HUD/Left" to="Camera_point" method="_on_left_button_up"]
+[connection signal="button_down" from="Canvas_layer/HUD/Right" to="Camera_point" method="_on_right_button_down"]
+[connection signal="button_up" from="Canvas_layer/HUD/Right" to="Camera_point" method="_on_right_button_up"]

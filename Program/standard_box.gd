@@ -12,9 +12,6 @@ func _ready():
 	
 
 
-func _on_delete_box():
-	queue_free()
-
 func clamping():
 	max = 100 - inner_box.size.y / 2
 	min = 0 + inner_box.size.y / 2
@@ -32,7 +29,6 @@ func clamping():
 
 func _process(_delta):
 	if Manager.test[id]["hidden"] == true:
-		Manager.test.erase(id)
 		queue_free()
 	else:
 		inner_box.size.y = Manager.test[id]["freq_low"] / 2
