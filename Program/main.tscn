@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce6m8secxwxlj"]
+[gd_scene load_steps=8 format=3 uid="uid://ce6m8secxwxlj"]
 
 [ext_resource type="Shader" path="res://main.gdshader" id="1_j7sod"]
 [ext_resource type="Script" path="res://main.gd" id="1_uis4v"]
 [ext_resource type="Script" path="res://Box_list_container.gd" id="3_6u030"]
 [ext_resource type="Script" path="res://Camera_point.gd" id="4_6qh1k"]
 [ext_resource type="PackedScene" uid="uid://cq6ckwwmv3k7g" path="res://new_box.tscn" id="5_i3mma"]
+[ext_resource type="Texture2D" uid="uid://cfeie2h0sp4b1" path="res://Untitled-1.png" id="5_nke22"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c4s5m"]
 render_priority = 1
@@ -39,85 +40,104 @@ material_override = SubResource("ShaderMaterial_c4s5m")
 size = Vector3(100, 100, 100)
 
 [node name="Panning" type="Label3D" parent="Outerbox"]
-transform = Transform3D(-4.37114e-08, -0.707107, 0.707107, 0, 0.707107, 0.707107, -1, 3.09086e-08, -3.09086e-08, 60, -45, 0)
+transform = Transform3D(-4.37114e-08, -0.707107, 0.707107, 0, 0.707107, 0.707107, -1, 3.09086e-08, -3.09086e-08, 55, -55, 0)
 pixel_size = 0.5
 double_sided = false
-text = "PANNING"
+text = "(L)   PANNING   (R)"
+font_size = 16
+outline_size = 6
 
 [node name="Panning2" type="Label3D" parent="Outerbox"]
-transform = Transform3D(-4.37114e-08, 0.707107, -0.707107, 0, 0.707107, 0.707107, 1, 3.09086e-08, -3.09086e-08, -60, -45, 0)
+transform = Transform3D(-4.37114e-08, 0.707107, -0.707107, 0, 0.707107, 0.707107, 1, 3.09086e-08, -3.09086e-08, -55, -55, 2.08165e-12)
 pixel_size = 0.5
 double_sided = false
-text = "PANNING"
+text = "(R)   PANNING   (L)"
+font_size = 16
+outline_size = 6
 
 [node name="Depth" type="Label3D" parent="Outerbox"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, -50, 60)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 2.08165e-12, -55, 55)
 pixel_size = 0.5
 double_sided = false
-text = "DEPTH"
+text = "(W)   DEPTH   (D)"
+font_size = 16
+outline_size = 6
 
 [node name="Depth2" type="Label3D" parent="Outerbox"]
-transform = Transform3D(-1, 6.18172e-08, -6.18172e-08, 0, 0.707107, 0.707107, 8.74228e-08, 0.707107, -0.707107, 0, -50, -60)
+transform = Transform3D(-1, 6.18172e-08, -6.18172e-08, 0, 0.707107, 0.707107, 8.74228e-08, 0.707107, -0.707107, 2.08165e-12, -55, -55)
 pixel_size = 0.5
 double_sided = false
-text = "DEPTH"
+text = "(D)   DEPTH   (W)"
+font_size = 16
+outline_size = 6
 
 [node name="freq" type="Label3D" parent="Outerbox"]
 transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, 1, -4.37114e-08, 0, 3.09086e-08, 0.707107, 0.707107, 55, 0, -55)
 pixel_size = 0.5
 double_sided = false
-text = "FREQ."
+text = "(L)   FREQ.   (H)"
+font_size = 16
+outline_size = 6
 
 [node name="freq1" type="Label3D" parent="Outerbox"]
 transform = Transform3D(9.27259e-08, -0.707107, -0.707107, 1, 4.37114e-08, 8.74228e-08, -3.09086e-08, -0.707107, 0.707107, 55, 0, 55)
 pixel_size = 0.5
 double_sided = false
-text = "FREQ."
+text = "(L)   FREQ.   (H)"
+font_size = 16
+outline_size = 6
 
 [node name="freq2" type="Label3D" parent="Outerbox"]
 transform = Transform3D(3.09086e-08, 0.707107, -0.707107, 1, -4.37114e-08, 0, -3.09086e-08, -0.707107, -0.707107, -55, 0, 55)
 pixel_size = 0.5
 double_sided = false
-text = "FREQ."
+text = "(L)   FREQ.   (H)"
+font_size = 16
+outline_size = 6
 
 [node name="freq3" type="Label3D" parent="Outerbox"]
 transform = Transform3D(3.09086e-08, 0.707107, 0.707107, 1, -4.37114e-08, 0, 3.09086e-08, 0.707107, -0.707107, -55, 0, -55)
 pixel_size = 0.5
 double_sided = false
-text = "FREQ."
+text = "(L)   FREQ.   (H)"
+font_size = 16
+outline_size = 6
 
 [node name="Canvas_layer" type="CanvasLayer" parent="."]
 
 [node name="HUD" type="Control" parent="Canvas_layer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1154.0
-offset_bottom = 428.0
+anchor_right = 0.037
+anchor_bottom = 0.08
+offset_right = 1087.4
+offset_bottom = 348.0
 
 [node name="Box_list_container" type="VBoxContainer" parent="Canvas_layer/HUD"]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 84.0
-offset_right = 233.0
-offset_bottom = 253.0
+offset_left = 22.0
+offset_top = 141.0
+offset_right = 276.0
+offset_bottom = 164.0
 script = ExtResource("3_6u030")
 
 [node name="Layers_text" type="RichTextLabel" parent="Canvas_layer/HUD"]
 layout_mode = 2
-offset_left = 100.0
-offset_top = 61.0
-offset_right = 176.0
-offset_bottom = 83.0
+offset_left = 92.0
+offset_top = 92.0
+offset_right = 194.0
+offset_bottom = 138.0
 size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 30
 text = " Layers"
 scroll_active = false
 
 [node name="add_new" type="Button" parent="Canvas_layer/HUD"]
 layout_mode = 0
-offset_left = 86.0
-offset_top = 16.0
-offset_right = 175.0
-offset_bottom = 47.0
+offset_left = 22.0
+offset_top = 24.0
+offset_right = 276.0
+offset_bottom = 89.0
+theme_override_font_sizes/font_size = 31
 text = "+ Add new"
 
 [node name="New_box" parent="Canvas_layer/HUD" instance=ExtResource("5_i3mma")]
@@ -130,25 +150,28 @@ offset_bottom = 539.0
 
 [node name="Right" type="Button" parent="Canvas_layer/HUD"]
 layout_mode = 0
-offset_left = 1733.0
+offset_left = 1678.0
 offset_top = 22.0
-offset_right = 1787.0
-offset_bottom = 52.0
+offset_right = 1776.0
+offset_bottom = 90.0
+icon = ExtResource("5_nke22")
 
 [node name="Left" type="Button" parent="Canvas_layer/HUD"]
 layout_mode = 0
-offset_left = 1619.0
-offset_top = 22.0
-offset_right = 1673.0
-offset_bottom = 52.0
+offset_left = 1596.0
+offset_top = 90.0
+offset_right = 1694.0
+offset_bottom = 158.0
+rotation = 3.14159
+icon = ExtResource("5_nke22")
 
 [node name="Middle" type="Button" parent="Canvas_layer/HUD"]
 layout_mode = 0
-offset_left = 1677.0
+offset_left = 1598.0
 offset_top = 22.0
-offset_right = 1731.0
-offset_bottom = 52.0
-theme_override_font_sizes/font_size = 13
+offset_right = 1676.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 20
 toggle_mode = true
 text = "Rotate"
 

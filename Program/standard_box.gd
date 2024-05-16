@@ -51,13 +51,13 @@ func _process(_delta):
 	if Manager.test[id]["hidden"] == true:
 		queue_free()
 	else:
-		inner_box.size.y = Manager.test[id]["freq_low"] / 2
+		inner_box.size.y = Manager.test[id]["freq_low"] 
 		inner_box.position.y = Manager.test[id]["freq_high"]
 
-		inner_box.size.x = Manager.test[id]["depth_low"] / 2
+		inner_box.size.x = Manager.test[id]["depth_low"] 
 		inner_box.position.x = Manager.test[id]["depth_high"]
 
-		inner_box.size.z = Manager.test[id]["pan_size"] / 2
+		inner_box.size.z = Manager.test[id]["pan_size"] 
 		inner_box.position.z = 100 - Manager.test[id]["pan_pos"]
 
 		clamping()
