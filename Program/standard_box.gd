@@ -15,7 +15,7 @@ var min_box = 0
 func _ready():
 	var material = StandardMaterial3D.new()
 	inner_box.material_override = material
-	inner_box.material_override.set_transparency(1)
+	inner_box.material_override.set_transparency(4)
 	
 
 

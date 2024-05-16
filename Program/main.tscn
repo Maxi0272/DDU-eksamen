@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cq6ckwwmv3k7g" path="res://new_box.tscn" id="5_i3mma"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c4s5m"]
-render_priority = 0
+render_priority = 1
 shader = ExtResource("1_j7sod")
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/wire_color = Color(0, 0, 0, 1)
@@ -90,34 +90,34 @@ text = "+ Add new"
 [node name="New_box" parent="Canvas_layer/HUD" instance=ExtResource("5_i3mma")]
 visible = false
 layout_mode = 1
-offset_left = 11.0
-offset_top = 291.0
-offset_right = -592.0
-offset_bottom = -35.0
-
-[node name="Middle" type="Button" parent="Canvas_layer/HUD"]
-layout_mode = 0
-offset_left = 1040.0
-offset_top = 51.0
-offset_right = 1094.0
-offset_bottom = 81.0
-theme_override_font_sizes/font_size = 13
-toggle_mode = true
-text = "Rotate"
-
-[node name="Left" type="Button" parent="Canvas_layer/HUD"]
-layout_mode = 0
-offset_left = 982.0
-offset_top = 51.0
-offset_right = 1036.0
-offset_bottom = 81.0
+offset_left = 10.0
+offset_top = 611.0
+offset_right = -712.0
+offset_bottom = 539.0
 
 [node name="Right" type="Button" parent="Canvas_layer/HUD"]
 layout_mode = 0
-offset_left = 1096.0
-offset_top = 51.0
-offset_right = 1150.0
-offset_bottom = 81.0
+offset_left = 1733.0
+offset_top = 22.0
+offset_right = 1787.0
+offset_bottom = 52.0
+
+[node name="Left" type="Button" parent="Canvas_layer/HUD"]
+layout_mode = 0
+offset_left = 1619.0
+offset_top = 22.0
+offset_right = 1673.0
+offset_bottom = 52.0
+
+[node name="Middle" type="Button" parent="Canvas_layer/HUD"]
+layout_mode = 0
+offset_left = 1677.0
+offset_top = 22.0
+offset_right = 1731.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 13
+toggle_mode = true
+text = "Rotate"
 
 [node name="Camera_point" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 50, 50)
@@ -129,8 +129,8 @@ fov = 60.0
 
 [connection signal="pressed" from="Canvas_layer/HUD/add_new" to="." method="_on_add_new_pressed"]
 [connection signal="buttonpress" from="Canvas_layer/HUD/New_box" to="Canvas_layer/HUD/Box_list_container" method="_on_new_box_buttonpress"]
-[connection signal="pressed" from="Canvas_layer/HUD/Middle" to="Camera_point" method="_on_middle_pressed"]
-[connection signal="button_down" from="Canvas_layer/HUD/Left" to="Camera_point" method="_on_left_button_down"]
-[connection signal="button_up" from="Canvas_layer/HUD/Left" to="Camera_point" method="_on_left_button_up"]
 [connection signal="button_down" from="Canvas_layer/HUD/Right" to="Camera_point" method="_on_right_button_down"]
 [connection signal="button_up" from="Canvas_layer/HUD/Right" to="Camera_point" method="_on_right_button_up"]
+[connection signal="button_down" from="Canvas_layer/HUD/Left" to="Camera_point" method="_on_left_button_down"]
+[connection signal="button_up" from="Canvas_layer/HUD/Left" to="Camera_point" method="_on_left_button_up"]
+[connection signal="pressed" from="Canvas_layer/HUD/Middle" to="Camera_point" method="_on_middle_pressed"]
