@@ -1,15 +1,6 @@
 extends Node3D
 @onready var new_box = $Canvas_layer/HUD/New_box
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
-
-func _process(_delta):
-	pass
-
-
 func _on_add_new_pressed():
 	new_box.show()
 	if Manager.shown == 0:

@@ -16,18 +16,18 @@ func _ready():
 	var material = StandardMaterial3D.new()
 	inner_box.material_override = material
 	inner_box.material_override.set_transparency(4)
-	
+
 
 
 func clamping():
 	max_box = 100 - inner_box.size.y / 2
 	min_box = 0 + inner_box.size.y / 2
 	inner_box.position.y = clamp(inner_box.position.y,min_box,max_box)
-	
+
 	max_box = 100 - inner_box.size.x / 2
 	min_box = 0 + inner_box.size.x / 2
 	inner_box.position.x = clamp(inner_box.position.x,min_box,max_box)
-	
+
 	max_box = 100 - inner_box.size.z / 2
 	min_box = 0 + inner_box.size.z / 2
 	inner_box.position.z = clamp(inner_box.position.z,min_box,max_box)

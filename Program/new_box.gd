@@ -14,9 +14,7 @@ var self_id = 0
 var editing_id = 0
 var hidden_box = false
 
-func _ready():
-	pass
-	
+
 func _process(_delta):
 	var box_list_children = box_list_container.get_children()
 	for i in box_list_children:
@@ -40,9 +38,8 @@ func _on_add_but_pressed():
 	self.hide()
 	reset_slider()
 	Manager.shown = 0
-	
 
-	
+
 func reset_slider():
 	freq_slider_range.value = 50
 	freq_slider_pos.value = 50
@@ -52,6 +49,7 @@ func reset_slider():
 	depth_slider_low.value = 50
 	name_edit.text = ""
 	color_button.color = Color(0, 0, 0, 1)
+
 
 func edit(box_id):
 	editing_id = box_id
@@ -67,6 +65,7 @@ func edit(box_id):
 	self.show()
 	print(box_id)
 
+
 func _on_freq_slider_low_value_changed(value):
 	if Manager.test[editing_id]["editing"] == true and not hidden_box:
 		var freq_low = value
@@ -74,6 +73,7 @@ func _on_freq_slider_low_value_changed(value):
 	else:
 		var freq_low = value
 		Manager.test[self_id]["freq_low"] = freq_low
+
 
 func _on_freq_slider_high_value_changed(value):
 	if Manager.test[editing_id]["editing"] == true and not hidden_box:
@@ -83,6 +83,7 @@ func _on_freq_slider_high_value_changed(value):
 		var freq_high = value
 		Manager.test[self_id]["freq_high"] = freq_high
 
+
 func _on_pan_slider_left_value_changed(value):
 	if Manager.test[editing_id]["editing"] == true and not hidden_box:
 		var pan_pos = value
@@ -90,7 +91,8 @@ func _on_pan_slider_left_value_changed(value):
 	else:
 		var pan_pos = value
 		Manager.test[self_id]["pan_pos"] = pan_pos
-		
+
+
 func _on_pan_slider_size_value_changed(value):
 	if Manager.test[editing_id]["editing"] == true and not hidden_box:
 		var pan_size = value
@@ -98,7 +100,8 @@ func _on_pan_slider_size_value_changed(value):
 	else:
 		var pan_size = value
 		Manager.test[self_id]["pan_size"] = pan_size
-		
+
+
 func _on_depth_slider_low_value_changed(value):
 	if Manager.test[editing_id]["editing"] == true and not hidden_box:
 		var depth_low = value
@@ -106,7 +109,8 @@ func _on_depth_slider_low_value_changed(value):
 	else:
 		var depth_low = value
 		Manager.test[self_id]["depth_low"] = depth_low
-		
+
+
 func _on_depth_slider_high_value_changed(value):
 	if Manager.test[editing_id]["editing"] == true and not hidden_box:
 		var depth_high = value
@@ -114,12 +118,14 @@ func _on_depth_slider_high_value_changed(value):
 	else:
 		var depth_high = value
 		Manager.test[self_id]["depth_high"] = depth_high
-		
+
+
 func _on_color_button_color_changed(color):
 	if Manager.test[editing_id]["editing"] == true and not hidden_box:
 		Manager.test[editing_id]["color"] = color
 	else:
 		Manager.test[self_id]["color"] = color
+
 
 func _on_name_edit_text_changed():
 	if Manager.test[editing_id]["editing"] == true and not hidden_box:
