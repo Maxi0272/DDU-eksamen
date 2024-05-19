@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ce6m8secxwxlj"]
+[gd_scene load_steps=10 format=3 uid="uid://ce6m8secxwxlj"]
 
 [ext_resource type="Shader" path="res://main.gdshader" id="1_j7sod"]
 [ext_resource type="Script" path="res://main.gd" id="1_uis4v"]
 [ext_resource type="Script" path="res://Box_list_container.gd" id="3_6u030"]
 [ext_resource type="Script" path="res://Outerbox.gd" id="3_12dup"]
 [ext_resource type="Script" path="res://Camera_point.gd" id="4_6qh1k"]
+[ext_resource type="Texture2D" uid="uid://bbl11cyd1hucw" path="res://Alpha snip DDU.png" id="4_cgdhi"]
 [ext_resource type="PackedScene" uid="uid://cq6ckwwmv3k7g" path="res://new_box.tscn" id="5_i3mma"]
 [ext_resource type="Texture2D" uid="uid://cfeie2h0sp4b1" path="res://Untitled-1.png" id="5_nke22"]
 
@@ -113,6 +114,37 @@ anchor_right = 0.037
 anchor_bottom = 0.08
 offset_right = 1087.4
 offset_bottom = 348.0
+
+[node name="PopupPanel" type="PopupPanel" parent="Canvas_layer/HUD"]
+title = "INFO"
+initial_position = 1
+size = Vector2i(400, 400)
+visible = true
+always_on_top = true
+max_size = Vector2i(400, 400)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Canvas_layer/HUD/PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 396.0
+offset_bottom = 396.0
+
+[node name="Label" type="Label" parent="Canvas_layer/HUD/PopupPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "INFO"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Canvas_layer/HUD/PopupPanel/VBoxContainer"]
+layout_mode = 2
+text = "Use arrow buttons or on screen buttons to rotate the square
+The \"Rotate\" button spins the square until turned off
+To change the transparency of a cube use this slider when you have opened the color menu:"
+fit_content = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Canvas_layer/HUD/PopupPanel/VBoxContainer"]
+position = Vector2(160, 230)
+texture = ExtResource("4_cgdhi")
 
 [node name="Box_list_container" type="VBoxContainer" parent="Canvas_layer/HUD"]
 layout_mode = 0
