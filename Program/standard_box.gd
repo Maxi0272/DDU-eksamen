@@ -38,15 +38,16 @@ func _process(_delta):
 	for i in inner_box.get_children():
 		i.scale = Vector3(50,50,50)
 		i.text = Manager.test[id]["name"]
-	front.position.x = inner_box.size.x /2
+	
+	front.position.x = inner_box.size.x /2 +1
 
-	back.position.x = -inner_box.size.x /2
+	back.position.x = -inner_box.size.x /2 -1
 
-	right.position.z = inner_box.size.z /2
+	right.position.z = inner_box.size.z /2 +1
 
-	left.position.z = -inner_box.size.z /2
+	left.position.z = -inner_box.size.z /2 -1
 
-	top.position.y = inner_box.size.y /2
+	top.position.y = inner_box.size.y /2 +1
 
 	if Manager.test[id]["hidden"] == true:
 		queue_free()

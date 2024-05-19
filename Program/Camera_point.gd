@@ -2,6 +2,7 @@ extends Node3D
 var toggleL = false
 var toggleR = false
 
+
 func _process(_delta):
 	if Input.is_action_pressed("ui_left"):
 		rotate_y(0.01)
@@ -11,6 +12,7 @@ func _process(_delta):
 		rotate_y(-0.01)
 #Toggle for rotate RIGHT with arrowkey
 
+#		rotate_x(-0.01)
 	if toggleL:
 		rotate_y(0.01)
 	if toggleR:

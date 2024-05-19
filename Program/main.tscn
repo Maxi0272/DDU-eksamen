@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ce6m8secxwxlj"]
+[gd_scene load_steps=9 format=3 uid="uid://ce6m8secxwxlj"]
 
 [ext_resource type="Shader" path="res://main.gdshader" id="1_j7sod"]
 [ext_resource type="Script" path="res://main.gd" id="1_uis4v"]
 [ext_resource type="Script" path="res://Box_list_container.gd" id="3_6u030"]
+[ext_resource type="Script" path="res://Outerbox.gd" id="3_12dup"]
 [ext_resource type="Script" path="res://Camera_point.gd" id="4_6qh1k"]
 [ext_resource type="PackedScene" uid="uid://cq6ckwwmv3k7g" path="res://new_box.tscn" id="5_i3mma"]
 [ext_resource type="Texture2D" uid="uid://cfeie2h0sp4b1" path="res://Untitled-1.png" id="5_nke22"]
@@ -38,6 +39,7 @@ light_energy = 0.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 50, 50)
 material_override = SubResource("ShaderMaterial_c4s5m")
 size = Vector3(100, 100, 100)
+script = ExtResource("3_12dup")
 
 [node name="Panning" type="Label3D" parent="Outerbox"]
 transform = Transform3D(-4.37114e-08, -0.707107, 0.707107, 0, 0.707107, 0.707107, -1, 3.09086e-08, -3.09086e-08, 55, -55, 0)
@@ -184,6 +186,7 @@ transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.7071
 fov = 60.0
 
 [connection signal="pressed" from="Canvas_layer/HUD/add_new" to="." method="_on_add_new_pressed"]
+[connection signal="pressed" from="Canvas_layer/HUD/add_new" to="Canvas_layer/HUD/New_box" method="_on_add_new_pressed"]
 [connection signal="buttonpress" from="Canvas_layer/HUD/New_box" to="Canvas_layer/HUD/Box_list_container" method="_on_new_box_buttonpress"]
 [connection signal="button_down" from="Canvas_layer/HUD/Right" to="Camera_point" method="_on_right_button_down"]
 [connection signal="button_up" from="Canvas_layer/HUD/Right" to="Camera_point" method="_on_right_button_up"]

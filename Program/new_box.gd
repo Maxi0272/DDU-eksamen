@@ -1,5 +1,6 @@
 extends Control
 signal buttonpress
+const inner_box = preload("res://Inner_box_template.tscn")
 @onready var name_edit = $VBoxContainer/Name_field/Name_edit
 @onready var color_button = $VBoxContainer/Color_field/Color_button
 @onready var freq_slider_range = $VBoxContainer/Freq_field_low/freq_slider_range
@@ -25,19 +26,21 @@ func _process(_delta):
 
 
 func _on_add_but_pressed():
-	hidden_box = Manager.test[editing_id]["hidden"]
-	Manager.id += 1
-	self_id = Manager.id
-	var new_dict = {Manager.id:{"id" : Manager.id, "name" : "", "color" : Color(0,0,0,1),  "freq_low" : 50, "freq_high" : 50, "pan_pos" : 50 , "pan_size" : 50, "depth_low" : 50, "depth_high": 50, "hidden" : false, "editing" : false}}
-	Manager.test.merge(new_dict)
-	if Manager.test[editing_id]["editing"] == true:
-		pass
-	else:
-		buttonpress.emit()
-	Manager.test[editing_id]["editing"] = false
+#	hidden_box = Manager.test[editing_id]["hidden"]
+#	Manager.id += 1
+#	self_id = Manager.id
+#	var new_dict = {Manager.id:{"id" : Manager.id, "name" : "", "color" : Color(0,0,0,1),  "freq_low" : 50, "freq_high" : 50, "pan_pos" : 50 , "pan_size" : 50, "depth_low" : 50, "depth_high": 50, "hidden" : false, "editing" : false}}
+#	Manager.test.merge(new_dict)
+#	if Manager.test[editing_id]["editing"] == true:
+#		pass
+#	else:
+#		buttonpress.emit()
+#	Manager.test[editing_id]["editing"] = false
 	self.hide()
-	reset_slider()
 	Manager.shown = 0
+#	Manager.id += 1
+#	self_id = Manager.id
+	
 
 
 func reset_slider():
@@ -132,3 +135,25 @@ func _on_name_edit_text_changed():
 		Manager.test[editing_id]["name"] = name_edit.text
 	else:
 		Manager.test[self_id]["name"] = name_edit.text
+
+
+func _on_add_new_pressed():
+	print("pressed")
+	self_id = Manager.id
+	hidden_box = Manager.test[editing_id]["hidden"]
+#	self_id = Manager.id
+	var new_dict = {Manager.id:{"id" : Manager.id, "name" : "", "color" : Color(0,0,0,1),  "freq_low" : 50, "freq_high" : 50, "pan_pos" : 50 , "pan_size" : 50, "depth_low" : 50, "depth_high": 50, "hidden" : false, "editing" : false}}
+	Manager.test.merge(new_dict)
+	if Manager.test[editing_id]["editing"] == true:
+		pass
+	else:
+		buttonpress.emit()
+	Manager.test[editing_id]["editing"] = false
+#	self.hide()
+#	reset_slider()
+#	Manager.shown = 0
+	var box_list_inst = inner_box.instantiate()
+	box_list_container.add_child(box_list_inst)
+	Manager.id += 1
+	reset_slider()
+	print(self_id)
