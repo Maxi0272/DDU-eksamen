@@ -31,6 +31,13 @@ offset_right = 420.0
 offset_bottom = 353.0
 color = Color(0.211765, 0.211765, 0.211765, 1)
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 238.0
+offset_right = 420.0
+offset_bottom = 242.0
+color = Color(0.145098, 0.145098, 0.145098, 1)
+
 [node name="add_new_text" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 164.0
@@ -313,6 +320,19 @@ text = "WET"
 layout_mode = 2
 size_flags_vertical = 3
 text = "ADD"
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 1.0
+offset_top = 100.0
+offset_right = 421.0
+offset_bottom = 104.0
+color = Color(0.145098, 0.145098, 0.145098, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_top = 169.0
+offset_right = 420.0
+offset_bottom = 173.0
+color = Color(0.145098, 0.145098, 0.145098, 1)
 
 [connection signal="text_changed" from="VBoxContainer/Name_field/Name_edit" to="." method="_on_name_edit_text_changed"]
 [connection signal="color_changed" from="VBoxContainer/Color_field/Color_button" to="." method="_on_color_button_color_changed"]
