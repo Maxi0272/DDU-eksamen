@@ -143,7 +143,9 @@ text = "1. Use arrow keys or on screen buttons to rotate the square.
 
 
 
-4. The layers have a charecter limit of 10 in the nameplate of the layer. "
+4. The layers have a charecter limit of 10 in the nameplate of the layer. 
+
+(To close the menu, click anywhere outside of the menu)"
 fit_content = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Canvas_layer/HUD/PopupPanel/VBoxContainer"]
