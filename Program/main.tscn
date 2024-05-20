@@ -115,16 +115,16 @@ offset_bottom = 348.0
 [node name="PopupPanel" type="PopupPanel" parent="Canvas_layer/HUD"]
 title = "INFO"
 initial_position = 1
-size = Vector2i(400, 400)
+size = Vector2i(500, 500)
 visible = true
 always_on_top = true
-max_size = Vector2i(400, 400)
+max_size = Vector2i(500, 500)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Canvas_layer/HUD/PopupPanel"]
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 396.0
-offset_bottom = 396.0
+offset_right = 496.0
+offset_bottom = 496.0
 
 [node name="Label" type="Label" parent="Canvas_layer/HUD/PopupPanel/VBoxContainer"]
 layout_mode = 2
@@ -134,14 +134,19 @@ horizontal_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Canvas_layer/HUD/PopupPanel/VBoxContainer"]
 layout_mode = 2
-text = "Use arrow buttons or on screen buttons to rotate the square
-The \"Rotate\" button spins the square until turned off
-To change the transparency of a cube use this slider when you have opened the color menu:"
+theme_override_font_sizes/normal_font_size = 18
+text = "1. Use arrow keys or on screen buttons to rotate the square.
+
+2. The \"Rotate\" button toggles a spin on the square until turned off by pressing it again.
+
+3. To change the transparency of a cube/layer use this slider as seen below, when you have opened the color menu:"
 fit_content = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Canvas_layer/HUD/PopupPanel/VBoxContainer"]
 position = Vector2(160, 230)
+scale = Vector2(1.3, 1.3)
 texture = ExtResource("4_cgdhi")
+offset = Vector2(50, 80)
 
 [node name="Box_list_container" type="VBoxContainer" parent="Canvas_layer/HUD"]
 layout_mode = 0
