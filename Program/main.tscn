@@ -139,7 +139,11 @@ text = "1. Use arrow keys or on screen buttons to rotate the square.
 
 2. The \"Rotate\" button toggles a spin on the square until turned off by pressing it again.
 
-3. To change the transparency of a cube/layer use this slider as seen below, when you have opened the color menu:"
+3. To change the transparency of a cube/layer use this slider as seen below, when you have opened the color menu:
+
+
+
+4. The layers have a charecter limit of 10 in the nameplate of the layer. "
 fit_content = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Canvas_layer/HUD/PopupPanel/VBoxContainer"]
