@@ -12,11 +12,12 @@ func _process(_delta):
 		rotate_y(-0.01)
 #Toggle for rotate RIGHT with arrowkey
 
-#		rotate_x(-0.01)
 	if toggleL:
 		rotate_y(0.01)
 	if toggleR:
 		rotate_y(-0.01)
+
+#Rotates the box when using on screen buttons via the toggles
 
 func _on_middle_pressed():
 	if toggleL:
@@ -24,6 +25,7 @@ func _on_middle_pressed():
 	else:
 		toggleL = true
 
+#Toggle for permanent rotate
 
 func _on_left_button_down():
 	toggleL = true
