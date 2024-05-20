@@ -42,7 +42,6 @@ func _process(_delta):
 		i.scale = Vector3(50,50,50)
 # Sets the length of the text on box to max 10 charachters and scales up the size of the box to 50
 
-
 	front.position.x = inner_box.size.x /2 +1
 	front.scale.y = inner_box.size.y
 	front.scale.x = inner_box.size.z
@@ -67,18 +66,18 @@ func _process(_delta):
 
 	if Manager.box_info[id]["hidden"] == true:
 		queue_free()
-	else:
-		inner_box.size.y = Manager.box_info[id]["freq_low"] 
-		inner_box.position.y = Manager.box_info[id]["freq_high"]
 
-		inner_box.size.x = Manager.box_info[id]["depth_low"] 
-		inner_box.position.x = Manager.box_info[id]["depth_high"]
+	inner_box.size.y = Manager.box_info[id]["freq_low"] 
+	inner_box.position.y = Manager.box_info[id]["freq_high"]
 
-		inner_box.size.z = Manager.box_info[id]["pan_size"] 
-		inner_box.position.z = 100 - Manager.box_info[id]["pan_pos"]
+	inner_box.size.x = Manager.box_info[id]["depth_low"] 
+	inner_box.position.x = Manager.box_info[id]["depth_high"]
 
-		clamping()
+	inner_box.size.z = Manager.box_info[id]["pan_size"] 
+	inner_box.position.z = 100 - Manager.box_info[id]["pan_pos"]
 
-		inner_box.material_override.albedo_color = Manager.box_info[id]["color"]
+	clamping()
+
+	inner_box.material_override.albedo_color = Manager.box_info[id]["color"]
 #Setting the size of the box by acceseing the dictionary and checking if the box has been deleted by looking up the hidden value
 #  in the dictionary. Also clamping calling the clamping function

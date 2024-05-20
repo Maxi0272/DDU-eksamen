@@ -26,8 +26,7 @@ func _process(_delta):
 func _on_add_but_pressed():
 #This is the button inside of "new_box"
 	self.hide()
-	Manager.shown = 0
-# Hides itself and update Shown value so main can create the next dictionary entry on button press
+# Hides itself
 
 func _on_add_new_pressed():
 #This is the button thats always on screen in the top left
