@@ -7,7 +7,7 @@ func _on_add_new_pressed():
 	new_box.show()
 #	Shows "new_box" which contains sliders for editing the inner box
 	if Manager.shown == 0:
-		var new_dict = {Manager.id:{"id" : Manager.id, "name" : "", "color" : Color(0,0,0,1),  "freq_low" : 50, "freq_high" : 50, "pan_pos" : 50, "pan_size" : 50 ,"depth_low" : 50, "depth_high": 50, "hidden" : false, "editing" : false}}
+		var new_dict = {Manager.id:{"name" : "", "color" : Color(0,0,0,1),  "freq_low" : 50, "freq_high" : 50, "pan_pos" : 50, "pan_size" : 50 ,"depth_low" : 50, "depth_high": 50, "hidden" : false, "editing" : false}}
 		Manager.box_info.merge(new_dict)
 #		Creates and adds new dictionary to current dictionary for the next inner box.
 	var box_3d = load("res://standard_box.tscn").instantiate()
